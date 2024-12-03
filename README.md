@@ -33,7 +33,7 @@ build.sh [TimescaleDB Docker Tag] [Compatible PostGIS Plugin Folder] [Docker Reg
 ```bash
 docker run -d --restart=unless-stopped \
 --name timescaledb \
--p 5434:5432 \
+-p 5432:5432 \
 -e POSTGRES_PASSWORD=[postgres user password] \
 parjom/timescaledb-postgis:latest-pg16-postgis350
 ```
