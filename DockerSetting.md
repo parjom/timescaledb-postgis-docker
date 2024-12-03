@@ -7,9 +7,11 @@
   ```bash
   # tonistiigi/binfmt를 사용하여 binfmt_misc 설정
   docker run --privileged --rm tonistiigi/binfmt:latest --install all
+
   # Docker Buildx 설정
   docker buildx create --use
   docker buildx inspect --bootstrap
+
   # Docker Buildx 설정 확인
   docker buildx ls --no-trunc
   # 활성 Node에 BUILDKIT버젼과 PLATFORMS 리스트 확인
