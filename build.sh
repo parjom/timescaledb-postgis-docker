@@ -1,8 +1,7 @@
 #!/bin/bash
-# 인자 수 확인: 정확히 2개인지 확인
 if [ "$#" -ne 3 ]; then
-  echo "사용법: $0 <TimescaleDB Tag> <PostGisVersionPath> <RegistryPath>"
-  echo "예: $0 2.17.2-pg16 postgis350"
+  echo "Usage: $0 <TimescaleDB Tag> <PostGisVersionPath> <RegistryPath>"
+  echo "Ex: $0 2.17.2-pg16 postgis350 ghcr.io/parjom"
   exit 1
 fi
 
