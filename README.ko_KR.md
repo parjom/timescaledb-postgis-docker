@@ -1,7 +1,7 @@
 [English](README.md) | 한국어
 
 # 이 프로젝트는 무엇인가요?
-Postgres 데이터베이스에 TimescaleDB와 PostGIS 플러그인을 모두 포함하는 이미지를 생성하기 위한 프로젝트. 현재까지 출시된 모든 postgres 버젼에 대한 최신버젼의 timescaledb와 해당 디비에 호환되는 Postgis 플러그인을 포함하는 이미지를 amd64와 arm64에서 구동 될 수 있는 이미지를 생성하는 것이 목적입니다.
+Postgres 데이터베이스에 TimescaleDB와 PostGIS 플러그인을 모두 포함하는 이미지를 생성하기 위한 프로젝트. 현재까지 출시된 모든 postgres 버젼에 대한 최신버젼의 timescaledb와 해당 디비에 호환되는 Postgis 플러그인을 포함하는 이미지를 **amd64**와 **arm64**에서 구동 될 수 있는 이미지를 생성하는 것이 목적입니다.
 
 # 빌드 방법
 
