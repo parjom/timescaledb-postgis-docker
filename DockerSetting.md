@@ -1,4 +1,4 @@
-English | [한국어](DockerSetting.ko_KR)
+English | [한국어](DockerSetting.ko_KR.md)
 
 # Docker Environment Setup for Cross-Building
 
