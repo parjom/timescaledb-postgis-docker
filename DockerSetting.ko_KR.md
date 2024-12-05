@@ -1,26 +1,26 @@
-English | [한국어](DockerSetting.ko_KR)
+[English](DockerSetting.md) | 한국어
 
-# Docker Environment Setup for Cross-Building
+# 크로스 빌드를 위한 도커 환경 설정
 
-* **Preparation**
-  * [Docker Engine Installation Guide](https://docs.docker.com/engine/install/)
+* 준비
+  * https://docs.docker.com/engine/install/
 
-* **Setup for Cross-Building**
+* 크로스 빌드를 위한 설정
   ```bash
-  # Configure binfmt_misc using tonistiigi/binfmt
+  # tonistiigi/binfmt를 사용하여 binfmt_misc 설정
   docker run --privileged --rm tonistiigi/binfmt:latest --install all
 
-  # Setup Docker Buildx
+  # Docker Buildx 설정
   docker buildx create --use
   docker buildx inspect --bootstrap
 
-  # Verify Docker Buildx Setup
+  # Docker Buildx 설정 확인
   docker buildx ls --no-trunc
-  # Check the BUILDKIT version and list of platforms on the active node
+  # 활성 Node에 BUILDKIT버젼과 PLATFORMS 리스트 확인
   ```
 
-* Cross-Platform Image Loading Test
-  * Verify arm64(aarch64)
+* 크로스 플랫폼 이미지 로딩 테스트
+  * arm64(aarch64) 확인
   ```bash
   $ docker run --platform=linux/arm64 -it --rm alpine:latest uname -m
   Unable to find image 'alpine:latest' locally
@@ -29,7 +29,7 @@ English | [한국어](DockerSetting.ko_KR)
   Status: Image is up to date for alpine:latest
   aarch64
   ```
-  * Verify amd64(x86_64)
+  * amd64(x86_64) 확인
   ```bash
   $ docker run --platform=linux/amd64 -it --rm alpine:latest uname -m
   Unable to find image 'alpine:latest' locally
