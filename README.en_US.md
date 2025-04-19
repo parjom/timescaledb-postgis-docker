@@ -1,24 +1,25 @@
-[English](README.md) | 한국어
+English | [한국어](README.ko_KR.md)
 
-# 이 프로젝트는 무엇인가요?
-Postgres 데이터베이스에 TimescaleDB와 PostGIS 플러그인을 모두 포함하는 이미지를 생성하기 위한 프로젝트. 현재까지 출시된 모든 postgres 버젼에 대한 최신버젼의 timescaledb와 해당 디비에 호환되는 Postgis 플러그인을 포함하는 이미지를 **amd64**와 **arm64**에서 구동 될 수 있는 이미지를 생성하는 것이 목적입니다.
+# What is This Project?
 
-# 빌드 방법
+This project aims to create Docker images that include both TimescaleDB and PostGIS plugins within a PostgreSQL database. The objective is to generate images compatible with all released PostgreSQL versions, incorporating the latest versions of TimescaleDB and the corresponding PostGIS plugins. Additionally, these images are designed to run on both **amd64** and **arm64** architectures.
+
+# How to Build
 
 ```bash
-# 단일빌드
+# Single Build
 build.sh [TimescaleDB Docker Tag] [Compatible PostGIS Plugin Folder] [Docker Registry]
-# 예
+# Example
 ./build.sh 2.17.2-pg16 postgis350 ghcr.io/parjom
 
-# 일괄빌드
+# Build All Images
 ./build-all.sh [Docker Registry]
-# 예
+# Example
 ./build-all.sh ghcr.io/parjom
 ```
 
-# 이미지 테그
-|Tag|Portgres 버젼|TimescaleDB 버젼|Postgis 버젼|비고|
+# Image Tags
+|Tag|PostgreSQL Version|TimescaleDB Version|PostGIS Version|Notes|
 |---|------|---|---|---|
 |latest-pg17-postgis350<br/>2.17.2-pg17-postgis350|17|2.17.2|3.5.0||
 |**latest(<font color="red">*</font>)**<br/>latest-pg16-postgis350<br/>2.17.2-pg16-postgis350|16|2.17.2|3.5.0||
@@ -30,7 +31,7 @@ build.sh [TimescaleDB Docker Tag] [Compatible PostGIS Plugin Folder] [Docker Reg
 |latest-pg10-postgis301<br/>1.7.5-pg10-postgis301|10|1.7.5|3.0.1|(deprecated)|
 |latest-pg9.6-postgis301<br/>1.7.5-pg9.6-postgis301|9.6|1.7.5|3.0.1|(deprecated)|
 
-# 사용법
+# How to Use
 ```bash
 docker run -d --restart=unless-stopped \
 --name timescaledb \
@@ -38,9 +39,9 @@ docker run -d --restart=unless-stopped \
 -e POSTGRES_PASSWORD=[postgres user password] \
 parjom/timescaledb-postgis:latest-pg16-postgis350
 ```
-(* 기본적으로 postgres 공식 도커이미지를 베이스로 생성한 이미지 이므로 postgres 도커와 사용법이 동일합니다. )
+(* Since it is an image created based on the official PostgreSQL Docker image, its usage is the same as the PostgreSQL Docker.)
 
-# 참고 사이트
+# Reference Sites
 1. TimescaleDB : https://www.timescale.com
 2. PostGIS : https://postgis.net
 3. TimescaleDB github : https://github.com/timescale/timescaledb-docker
